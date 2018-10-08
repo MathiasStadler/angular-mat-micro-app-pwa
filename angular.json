@@ -134,6 +134,125 @@
           }
         }
       }
+    },
+    "web-component-chat": {
+      "root": "projects/web-component-chat/",
+      "sourceRoot": "projects/web-component-chat/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/web-component-chat",
+            "index": "projects/web-component-chat/src/index.html",
+            "main": "projects/web-component-chat/src/main.ts",
+            "polyfills": "projects/web-component-chat/src/polyfills.ts",
+            "tsConfig": "projects/web-component-chat/tsconfig.app.json",
+            "assets": [
+              "projects/web-component-chat/src/favicon.ico",
+              "projects/web-component-chat/src/assets"
+            ],
+            "styles": [
+              "projects/web-component-chat/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/web-component-chat/src/environments/environment.ts",
+                  "with": "projects/web-component-chat/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "web-component-chat:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "web-component-chat:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "web-component-chat:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/web-component-chat/src/test.ts",
+            "polyfills": "projects/web-component-chat/src/polyfills.ts",
+            "tsConfig": "projects/web-component-chat/tsconfig.spec.json",
+            "karmaConfig": "projects/web-component-chat/karma.conf.js",
+            "styles": [
+              "projects/web-component-chat/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/web-component-chat/src/favicon.ico",
+              "projects/web-component-chat/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/web-component-chat/tsconfig.app.json",
+              "projects/web-component-chat/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "web-component-chat-e2e": {
+      "root": "projects/web-component-chat-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/web-component-chat-e2e/protractor.conf.js",
+            "devServerTarget": "web-component-chat:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "web-component-chat:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/web-component-chat-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-mat-micro-app-pwa"

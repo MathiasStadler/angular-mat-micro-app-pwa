@@ -8,11 +8,13 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { WebComponentChatComponent } from './web-component-chat/web-component-chat.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppNavigationBarComponent
+    AppNavigationBarComponent,
+    WebComponentChatComponent
   ],
   imports: [
     BrowserModule,
