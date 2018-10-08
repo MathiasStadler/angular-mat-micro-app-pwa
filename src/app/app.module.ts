@@ -6,15 +6,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppNavigationBarComponent } from './app-navigation-bar/app-navigation-bar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
-import { ServiceWorkerModule } from '@angular/service-worker';
+// import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { WebComponentChatComponent } from './web-component-chat/web-component-chat.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppNavigationBarComponent,
-    WebComponentChatComponent
+    AppNavigationBarComponent
   ],
   imports: [
     BrowserModule,
@@ -24,8 +22,8 @@ import { WebComponentChatComponent } from './web-component-chat/web-component-ch
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    MatListModule
+    // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

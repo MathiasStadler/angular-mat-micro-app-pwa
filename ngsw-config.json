@@ -11,7 +11,11 @@
           "/**/*.css",
           "/**/*.scss",
           "/**/*.js",
-          "/**/*.html"
+          "/**/*.html",
+          "/web-component-chat/*js",
+          "/web-component-chat/*html",
+          "/web-component-chat/*css",
+          "/web-component-chat/*scss"
         ],
         "urls": [
           "https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2",

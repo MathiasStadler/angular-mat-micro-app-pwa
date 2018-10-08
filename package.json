@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "http-server -c-1 dist/angular-mat-micro-app-pwa",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:clients": "npm run build:chat",
+    "build:chat": "ng build --prod --project web-component-chat --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/web-component-chat",
+    "build:shell": "ng build --project angular-mat-micro-app-pwa --prod",
+    "build":"npm run build:shell && npm run build:chat"
   },
   "private": true,
   "dependencies": {
