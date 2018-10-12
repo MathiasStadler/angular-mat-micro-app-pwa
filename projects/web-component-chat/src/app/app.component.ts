@@ -29,9 +29,8 @@ export class AppComponent implements OnInit {
     this.router.initialNavigation(); // Manually triggering initial navigation for @angular/elements ?
 
     // Standalone mode
-    // if (environment.standalone) {
-    if ( false) {
-    this.router.navigate(['/client-a/page1']);
+    if (environment.standalone) {
+     this.router.navigate(['/chat/AppChatListComponent']);
     }
 
     // just for demonstration!

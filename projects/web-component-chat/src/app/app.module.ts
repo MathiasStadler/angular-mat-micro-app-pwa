@@ -46,8 +46,8 @@ export class AppModule {
   }
 
   ngDoBootstrap() {
-    const appElement = createCustomElement(AppComponent, { injector: this.injector});
-    customElements.define('chat', appElement);
+    // const appElement = createCustomElement(AppComponent, { injector: this.injector});
+    // customElements.define('chat', appElement);
 
     // const widgetElement = createCustomElement(ClientAWidgetComponent, { injector: this.injector})
     // customElements.define('client-a-widget', widgetElement);
