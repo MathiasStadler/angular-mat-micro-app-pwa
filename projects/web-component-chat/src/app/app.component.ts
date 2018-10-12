@@ -13,8 +13,8 @@ export class AppComponent implements OnInit {
 
   @Input('state')
   set state(state: string) {
-      // tslint:disable-next-line:no-console
-      console.debug('chat received state', state);
+    // tslint:disable-next-line:no-console
+    console.debug('chat received state', state);
   }
 
   @Output() message = new EventEmitter<any>();
@@ -29,8 +29,9 @@ export class AppComponent implements OnInit {
     this.router.initialNavigation(); // Manually triggering initial navigation for @angular/elements ?
 
     // Standalone mode
-    if (environment.standalone) {
-      this.router.navigate(['/client-a/page1']);
+    // if (environment.standalone) {
+    if ( false) {
+    this.router.navigate(['/client-a/page1']);
     }
 
     // just for demonstration!
