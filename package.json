@@ -7,10 +7,17 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:clients": "npm run build:chat",
-    "build:chat": "ng build --prod --project web-component-chat --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/web-component-chat",
-    "build:shell": "ng build --project angular-mat-micro-app-pwa --prod",
-    "build": "npm run build:shell && npm run build:chat"
+    "build:clients_seq": "npm run build:chat && npm run build:blog",
+    "build:clients": "concurrently \"npm run build:chat\" \"npm run build:blog\"",
+    "build:chat_prod": "ng build --prod --project web-component-chat --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/web-component-chat",
+    "build:blog_prod": "ng build --prod --project blog --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/blog",
+    "build:chat": "ng build --no-aot --build-optimizer=false --project web-component-chat --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/web-component-chat",
+    "build:blog": "ng build  --no-aot --build-optimizer=false --project blog --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/blog",
+
+    "build:shell_prod": "ng build --project angular-mat-micro-app-pwa --prod",
+    "build:shell": "ng build --no-aot --build-optimizer=false --project angular-mat-micro-app-pwa ",
+    "build_seq": "npm run build:shell && npm run build:clients",
+    "build": "concurrently \"npm run build:shell\" \"npm run build:clients\""
   },
   "private": true,
   "dependencies": {
@@ -41,6 +48,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.3.0",
+    "concurrently": "^4.0.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.0.0",

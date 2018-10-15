@@ -18,10 +18,10 @@ export class AppComponent implements OnInit {
       path: 'web-component-chat/main.js',
       element: 'chat'
     },
-    'client-b': {
+    'block': {
       loaded: false,
-      path: 'client-b/main.js',
-      element: 'client-b'
+      path: 'block/main.js',
+      element: 'block'
     },
     'client-c': {
       loaded: false,
