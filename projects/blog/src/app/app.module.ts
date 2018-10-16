@@ -1,21 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule , Injector, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-
-import { AppComponent } from './app.component';
-
 import { createCustomElement } from '@angular/elements';
 import { RouterModule } from '@angular/router';
 
+import { AppComponent } from './app.component';
+import { CoreComponent } from './core/core.component';
+import { BlogListComponent } from './blog-list/blog-list.component';
+import { BlogItemComponent } from './blog-item/blog-item.component';
+import { EmptyComponent } from './empty/empty.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CoreComponent,
+    BlogListComponent,
+    BlogItemComponent,
+    EmptyComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      { path: 'blog', component: CoreComponent, children: [
-        { path: 'list', component: Page1Component },
-        { path: 'details', component: Page2Component },
+      { path: 'app-blog', component: CoreComponent, children: [
+        { path: 'list', component: BlogListComponent },
+        { path: 'details', component: BlogItemComponent },
       ]},
       { path: '**', component: EmptyComponent }
     ], { useHash: true }),
@@ -33,8 +40,8 @@ export class AppModule {
   }
 
   ngDoBootstrap() {
-    const appElement = createCustomElement(AppComponent, { injector: this.injector});
-    customElements.define('blog', appElement);
+   const appElement = createCustomElement(AppComponent, { injector: this.injector});
+   customElements.define('app-blog', appElement);
 
    // const widgetElement = createCustomElement(ClientAWidgetComponent, { injector: this.injector})
    // customElements.define('client-a-widget', widgetElement);

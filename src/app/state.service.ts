@@ -10,6 +10,7 @@ export class StateService {
     private clients: HTMLElement[] = [];
 
     public registerClient(client: HTMLElement) {
+        console.log('registerClient', client);
         this.clients.push(client);
     }
 

@@ -7,17 +7,21 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:clients_seq": "npm run build:chat && npm run build:blog",
-    "build:clients": "concurrently \"npm run build:chat\" \"npm run build:blog\"",
+    "build:clients": "npm run build:blog",
+    "build:clients_par": "concurrently \"npm run build:chat\" \"npm run build:blog\"",
     "build:chat_prod": "ng build --prod --project web-component-chat --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/web-component-chat",
     "build:blog_prod": "ng build --prod --project blog --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/blog",
-    "build:chat": "ng build --no-aot --build-optimizer=false --project web-component-chat --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/web-component-chat",
-    "build:blog": "ng build  --no-aot --build-optimizer=false --project blog --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/blog",
+
+    "build:chat": "ng build --prod --project web-component-chat --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/web-component-chat",
+    "build:blog": "ng build  --prod --project blog --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/blog",
+
+    "build:chat_s": "ng build --no-aot --build-optimizer=false --project web-component-chat --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/web-component-chat",
+    "build:blog_s": "ng build  --no-aot --build-optimizer=false --project blog --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/blog",
 
     "build:shell_prod": "ng build --project angular-mat-micro-app-pwa --prod",
-    "build:shell": "ng build --no-aot --build-optimizer=false --project angular-mat-micro-app-pwa ",
-    "build_seq": "npm run build:shell && npm run build:clients",
-    "build": "concurrently \"npm run build:shell\" \"npm run build:clients\""
+    "build:shell": "ng build --project angular-mat-micro-app-pwa ",
+    "build": "npm run build:shell && npm run build:clients",
+    "build_par": "concurrently \"npm run build:shell\" \"npm run build:clients\""
   },
   "private": true,
   "dependencies": {

@@ -18,10 +18,10 @@ export class AppComponent implements OnInit {
       path: 'web-component-chat/main.js',
       element: 'chat'
     },
-    'block': {
+    'app-blog': {
       loaded: false,
-      path: 'block/main.js',
-      element: 'block'
+      path: 'blog/main.js',
+      element: 'app-blog'
     },
     'client-c': {
       loaded: false,
@@ -36,13 +36,15 @@ export class AppComponent implements OnInit {
   };
 
   ngOnInit() {
-    this.load('chat');
-    // this.load('client-b');
+   // this.load('chat');
+    this.load('app-blog');
     // this.load('client-c');
     // this.load('read-indexedDB');
   }
 
   load(name: string): void {
+
+    console.log('Try to load ', name);
 
     const configItem = this.config[name];
     if (configItem.loaded) { return; }
@@ -70,4 +72,8 @@ export class AppComponent implements OnInit {
     console.debug('shell received message: ', msg.detail);
   }
 
+  sendState() {
+    console.log('[app root] sendState');
+      this.stateService.setState('Info from Shell');
+  }
 }

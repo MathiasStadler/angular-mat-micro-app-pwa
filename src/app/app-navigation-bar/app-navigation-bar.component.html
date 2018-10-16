@@ -8,10 +8,8 @@
     [opened]="!(isHandset$ | async)">
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#/chat/AppChatListComponent">chat</a>
-      <a mat-list-item href="#/block/AppComponent">blog</a>
-      <a mat-list-item href="#">media</a>
-      <a mat-list-item href="#">blog</a>
+     <a mat-list-item href="#">home</a>
+     <a mat-list-item href="#/app-blog/list">app-blog</a>
     </mat-nav-list>
   </mat-sidenav>
 
@@ -27,5 +25,12 @@
       </button>
       <span>Application Title</span>
     </mat-toolbar>
+
+    Test
+    <a href="#/app-blog/list">blog</a>
+
+    <div id="content" class="content"></div>
+
+
   </mat-sidenav-content>
 </mat-sidenav-container>
