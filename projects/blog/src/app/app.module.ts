@@ -29,10 +29,8 @@ import { EmptyComponent } from './empty/empty.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  entryComponents: [
-    AppComponent
-  ]
+  entryComponents: [AppComponent]
+
 })
 export class AppModule {
 

@@ -256,129 +256,13 @@
     },
     "blog": {
       "root": "projects/blog/",
-      "projectType": "application",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "ngx-build-plus:build",
-          "options": {
-            "outputPath": "dist/blog",
-            "index": "projects/blog/src/index.html",
-            "main": "projects/blog/src/main.ts",
-            "polyfills": "projects/blog/src/polyfills.ts",
-            "tsConfig": "projects/blog/tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "favicon.ico",
-                "input": "projects/blog/src",
-                "output": "/"
-              },
-              {
-                "glob": "**/*",
-                "input": "projects/blog/src/assets",
-                "output": "/assets"
-              }
-            ],
-            "styles": [
-              "projects/blog/src/styles.css"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "debug": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/blog/src/environments/environment.ts",
-                  "with": "projects/blog/src/environments/environment.standalone.ts"
-                }
-              ]
-            },
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/blog/src/environments/environment.ts",
-                  "with": "projects/blog/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
-            }
-          }
-        },
-        "serve": {
-          "builder": "ngx-build-plus:dev-server",
-          "options": {
-            "browserTarget": "block:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "block:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "block:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/block/src/test.ts",
-            "polyfills": "projects/block/src/polyfills.ts",
-            "tsConfig": "projects/block/tsconfig.spec.json",
-            "karmaConfig": "projects/block/karma.conf.js",
-            "styles": [
-              {
-                "input": "projects/block/styles.css"
-              }
-            ],
-            "scripts": [],
-            "assets": [
-              {
-                "glob": "favicon.ico",
-                "input": "projects/block/src/",
-                "output": "/"
-              },
-              {
-                "glob": "**/*",
-                "input": "projects/block/src/assets",
-                "output": "/assets"
-              }
-            ]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/block/tsconfig.app.json",
-              "projects/block/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "blog_old": {
-      "root": "projects/blog/",
       "sourceRoot": "projects/blog/src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "ngx-build-plus:build",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/blog",
             "index": "projects/blog/src/index.html",
