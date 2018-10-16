@@ -33,7 +33,10 @@
               },
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@webcomponents/custom-elements/src/native-shim.js"
+
+            ]
           },
           "configurations": {
             "production": {
@@ -135,7 +138,7 @@
         }
       }
     },
-    "web-component-chat": {
+    "web-component-chat-old": {
       "root": "projects/web-component-chat/",
       "sourceRoot": "projects/web-component-chat/src",
       "projectType": "application",
@@ -250,6 +253,66 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        }
+      }
+    },
+    "web-component-chat": {
+      "root": "projects/web-component-chat/",
+      "projectType": "application",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:build",
+          "options": {
+            "outputPath": "dist/web-component-chat",
+            "index": "projects/web-component-chat/src/index.html",
+            "main": "projects/web-component-chat/src/main.ts",
+            "polyfills": "projects/web-component-chat/src/polyfills.ts",
+            "tsConfig": "projects/web-component-chat/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "favicon.ico",
+                "input": "projects/web-component-chat/src",
+                "output": "/"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/web-component-chat/src/assets",
+                "output": "/assets"
+              }
+            ],
+            "styles": [
+              "projects/web-component-chat/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "debug": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/web-component-chat/src/environments/environment.ts",
+                  "with": "projects/web-component-chat/src/environments/environment.standalone.ts"
+                }
+              ]
+            },
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/web-component-chat/src/environments/environment.ts",
+                  "with": "projects/web-component-chat/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
           }
         }
       }

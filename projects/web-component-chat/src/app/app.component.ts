@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from '../environments/environment';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-chat',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   encapsulation: ViewEncapsulation.Emulated

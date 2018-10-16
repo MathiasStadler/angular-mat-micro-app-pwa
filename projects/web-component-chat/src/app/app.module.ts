@@ -17,7 +17,7 @@ import { PushPipe } from './push.pipe';
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      { path: 'chat', component: AppCoreComponent, children: [
+      { path: 'app-chat', component: AppCoreComponent, children: [
         { path: 'list', component: AppChatListComponent }
         ]},
       { path: '**', component: AppEmptyComponent }
@@ -34,10 +34,8 @@ import { PushPipe } from './push.pipe';
   ],
   providers: [],
   bootstrap: [],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   entryComponents: [
-    AppComponent,
-    // ClientAWidgetComponent
+    AppComponent
   ]
 })
 export class AppModule {
@@ -46,8 +44,8 @@ export class AppModule {
   }
 
   ngDoBootstrap() {
-    // const appElement = createCustomElement(AppComponent, { injector: this.injector});
-    // customElements.define('chat', appElement);
+     const appElement = createCustomElement(AppComponent, { injector: this.injector});
+     customElements.define('app-chat', appElement);
 
     // const widgetElement = createCustomElement(ClientAWidgetComponent, { injector: this.injector})
     // customElements.define('client-a-widget', widgetElement);

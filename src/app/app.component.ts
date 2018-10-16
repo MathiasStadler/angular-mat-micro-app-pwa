@@ -13,10 +13,10 @@ export class AppComponent implements OnInit {
   }
 
   config = {
-    'chat': {
+    'app-chat': {
       loaded: false,
       path: 'web-component-chat/main.js',
-      element: 'chat'
+      element: 'app-chat'
     },
     'app-blog': {
       loaded: false,
@@ -36,8 +36,8 @@ export class AppComponent implements OnInit {
   };
 
   ngOnInit() {
-   // this.load('chat');
-    this.load('app-blog');
+   this.load('app-chat');
+   this.load('app-blog');
     // this.load('client-c');
     // this.load('read-indexedDB');
   }
