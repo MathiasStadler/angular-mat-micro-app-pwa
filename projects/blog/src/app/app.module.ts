@@ -3,6 +3,11 @@ import { NgModule , Injector, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { RouterModule } from '@angular/router';
 
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
+
+
+
 import { AppComponent } from './app.component';
 import { CoreComponent } from './core/core.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
@@ -26,6 +31,12 @@ import { EmptyComponent } from './empty/empty.component';
       ]},
       { path: '**', component: EmptyComponent }
     ], { useHash: true }),
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent],
