@@ -23,10 +23,25 @@ export class AppComponent implements OnInit {
       path: 'blog/main.js',
       element: 'app-blog'
     },
-    'client-c': {
+    'productmgt': {
       loaded: false,
-      path: 'client-c/main.js',
-      element: 'client-c'
+      path: 'productmgt/main.js',
+      element: 'productmgt'
+    },
+    'product-cart': {
+      loaded: false,
+      path: 'product-cart/main.js',
+      element: 'product-cart'
+    },
+    'product-header': {
+      loaded: false,
+      path: 'product-header/main.js',
+      element: 'product-header'
+    },
+    'product-view': {
+      loaded: false,
+      path: 'product-view/main.js',
+      element: 'product-view'
     },
     'read-indexedDB': {
       loaded: false,
@@ -36,10 +51,13 @@ export class AppComponent implements OnInit {
   };
 
   ngOnInit() {
-   this.load('app-chat');
-   this.load('app-blog');
-    // this.load('client-c');
-    // this.load('read-indexedDB');
+  // this.load('app-chat');
+  // this.load('app-blog');
+  this.load('productmgt');
+  this.load('product-cart');
+  this.load('product-header');
+  this.load('product-view');
+  // this.load('read-indexedDB');
   }
 
   load(name: string): void {

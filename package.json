@@ -11,13 +11,15 @@
     "build:clients_par": "concurrently \"npm run build:chat\" \"npm run build:blog\"",
     "build:chat": "ng build --prod --project web-component-chat --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/web-component-chat",
     "build:blog": "ng build  --prod --project blog --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/blog",
-
     "build:chat_dev": "ng build --no-aot --build-optimizer=false --project web-component-chat --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/web-component-chat",
     "build:blog_dev": "ng build --no-aot --build-optimizer=false --project blog --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/blog",
     "build:shell_dev": "ng build --no-aot --build-optimizer=false --project angular-mat-micro-app-pwa",
-    "build:dev":"npm run build:shell_dev && npm run build:chat_dev &&npm run build:blog_dev",
-
-
+    "build:productmgt_dev": "ng build --no-aot --build-optimizer=false --project productmgt --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/productmgt",
+    "build:product-cart_dev": "ng build --no-aot --build-optimizer=false --project product-cart --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/product-cart",
+    "build:product-view_dev": "ng build --no-aot --build-optimizer=false --project product-view --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/product-view",
+    "build:product-header_dev": "ng build --no-aot --build-optimizer=false --project product-header --output-hashing none --vendor-chunk false --output-path dist/angular-mat-micro-app-pwa/product-header",
+    "build:dev": "npm run build:shell_dev && npm run build:chat_dev && npm run build:blog_dev && npm run build:productmgt_dev && npm run build:product-cart_dev &&  npm run  build:product-header_dev && npm run build:product-view_dev",
+    "build:dev_par": "concurrently \"npm run build:shell_dev\" \"npm run build:chat_dev\" \"npm run build:blog_dev \" \"npm run build:productmgt_dev\" \"npm run build:product-cart_dev\" \"npm run build:product-view_dev\" \"npm run build:product-header_dev\" ",
     "build:shell": "ng build --project angular-mat-micro-app-pwa ",
     "build": "npm run build:shell && npm run build:clients",
     "build_par": "concurrently \"npm run build:shell\" \"npm run build:clients\""
@@ -43,7 +45,9 @@
     "@webcomponents/custom-elements": "^1.2.1",
     "bootstrap": "^4.1.3",
     "core-js": "^2.5.7",
+    "font-awesome": "^4.7.0",
     "idb": "^2.1.3",
+    "ngx-bootstrap": "^3.0.1",
     "ngx-build-plus": "^6.1.0",
     "rxjs": "6.3.3",
     "service-worker": "0.0.0",
