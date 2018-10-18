@@ -1,32 +1,29 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+import { NgModule, Injector, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
+import { RouterModule } from '@angular/router';
+
+import { ProductHeaderModule } from './../../projects/product-header/src/app/app.module';
+import { ProductViewModule } from './../../projects/product-view/src/app/app.module';
+import { ProductCartModule } from './../../projects/product-cart/src/app/app.module';
 
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppNavigationBarComponent } from './app-navigation-bar/app-navigation-bar.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
-// import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AppNavigationBarComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule
-    // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-  ],
+    ProductHeaderModule,
+   ProductCartModule,
+   ProductViewModule
+      ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 })
-export class AppModule { }
+export class AppModule {}
+
+

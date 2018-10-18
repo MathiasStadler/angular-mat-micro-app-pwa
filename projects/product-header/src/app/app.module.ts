@@ -18,13 +18,15 @@ import { AppComponent } from './app.component';
     AppComponent
   ]
 })
-export class ProductHeaderModule {
 
-  constructor(private injector: Injector) {
-  }
-  ngDoBootstrap() {
-  const appElement = createCustomElement(AppComponent, { injector: this.injector});
-     customElements.define('product-header', appElement);
+
+  export class ProductHeaderModule {
+    constructor(private injector: Injector) {
+      const productHeader = createCustomElement(AppComponent, { injector });
+      customElements.define('product-header', productHeader);
+    }
+
+    ngDoBootstrap() {}
   }
 
-}
+

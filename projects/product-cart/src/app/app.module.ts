@@ -21,10 +21,13 @@ import { ProductCartComponent } from './app.component';
 export class ProductCartModule {
 
   constructor(private injector: Injector) {
+
+    const appElement = createCustomElement(ProductCartComponent, { injector: this.injector});
+    customElements.define('product-cart', appElement);
+
   }
   ngDoBootstrap() {
-  const appElement = createCustomElement(ProductCartComponent, { injector: this.injector});
-     customElements.define('product-cart', appElement);
+
   }
 
 }

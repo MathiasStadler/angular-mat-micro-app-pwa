@@ -11,27 +11,6 @@ import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
   encapsulation: ViewEncapsulation.Emulated
 })
 export class ProductViewComponent implements OnInit {
-  constructor() {
-  }
-
-  ngOnInit() {
-
-    console.log( '[ProductViewComponent] onInit()');
-
-  }
-
-  @Input()
-  set message(message: string) {
-    const productObj = message;
-    for (const product of this.productlist) {
-      if (product.productname === productObj['productname']) {
-        product.qty = productObj['qty'];
-        break;
-      }
-    }
-
-  }
-  get message(): string { return this._message; }
 
   public productlist: any[] = [
     {
@@ -72,6 +51,30 @@ export class ProductViewComponent implements OnInit {
     }
   ];
   _message: string;
+
+  constructor() {
+  }
+
+  ngOnInit() {
+
+    console.log( '[ProductViewComponent] onInit()');
+
+  }
+
+  @Input()
+  set message(message: string) {
+    const productObj = message;
+    for (const product of this.productlist) {
+      if (product.productname === productObj['productname']) {
+        product.qty = productObj['qty'];
+        break;
+      }
+    }
+
+  }
+  get message(): string { return this._message; }
+
+
 
 
 

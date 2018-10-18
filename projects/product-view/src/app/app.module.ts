@@ -21,10 +21,12 @@ import { ProductViewComponent } from './app.component';
 export class ProductViewModule {
 
   constructor(private injector: Injector) {
+    const appElement = createCustomElement(ProductViewComponent, { injector: this.injector});
+    customElements.define('product-view', appElement);
+
   }
   ngDoBootstrap() {
-  const appElement = createCustomElement(ProductViewComponent, { injector: this.injector});
-     customElements.define('product-view', appElement);
+
   }
 
 }
