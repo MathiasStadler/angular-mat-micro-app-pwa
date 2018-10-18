@@ -10,13 +10,31 @@ import { ProductCartModule } from './../../projects/product-cart/src/app/app.mod
 
 import { AppComponent } from './app.component';
 
+// mat
+import { AppNavigationBarComponent } from './app-navigation-bar/app-navigation-bar.component';
+
+// mat
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppNavigationBarComponent
   ],
   imports: [
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
     BrowserModule,
+    BrowserAnimationsModule,
     ProductHeaderModule,
+
    ProductCartModule,
    ProductViewModule
       ],
