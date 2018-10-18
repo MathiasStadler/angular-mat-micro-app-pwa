@@ -54,9 +54,9 @@ export class AppComponent implements OnInit {
   // this.load('app-chat');
   // this.load('app-blog');
   this.load('productmgt');
-  this.load('product-cart');
-  this.load('product-header');
-  this.load('product-view');
+  // this.load('product-cart');
+  // this.load('product-header');
+  // this.load('product-view');
   // this.load('read-indexedDB');
   }
 

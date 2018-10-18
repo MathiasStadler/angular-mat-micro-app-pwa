@@ -34,7 +34,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/@webcomponents/custom-elements/src/native-shim.js"
+              "node_modules/@webcomponents/custom-elements/src/native-shim.js",
+              "node_modules/@webcomponents/custom-elements/custom-elements.min.js"
             ]
           },
           "configurations": {
@@ -284,7 +285,8 @@
             "styles": [
               "projects/web-component-chat/src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["node_modules/@webcomponents/custom-elements/src/native-shim.js",
+              "node_modules/@webcomponents/custom-elements/custom-elements.min.js"]
           },
           "configurations": {
             "debug": {
@@ -344,7 +346,8 @@
             "styles": [
               "projects/blog/src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["node_modules/@webcomponents/custom-elements/src/native-shim.js",
+              "node_modules/@webcomponents/custom-elements/custom-elements.min.js"]
           },
           "configurations": {
             "debug": {
@@ -574,7 +577,8 @@
               "projects/productmgt/src/styles.css"
             ],
             "scripts": [
-              "node_modules/@webcomponents/custom-elements/src/native-shim.js"
+              "node_modules/@webcomponents/custom-elements/src/native-shim.js",
+              "node_modules/@webcomponents/custom-elements/custom-elements.min.js"
             ]
           },
           "configurations": {
@@ -695,7 +699,8 @@
               "projects/product-view/src/styles.css"
             ],
             "scripts": [
-              "node_modules/@webcomponents/custom-elements/src/native-shim.js"
+              "node_modules/@webcomponents/custom-elements/src/native-shim.js",
+              "node_modules/@webcomponents/custom-elements/custom-elements.min.js"
             ]
           },
           "configurations": {
@@ -816,7 +821,8 @@
               "projects/product-header/src/styles.css"
             ],
             "scripts": [
-              "node_modules/@webcomponents/custom-elements/src/native-shim.js"
+              "node_modules/@webcomponents/custom-elements/src/native-shim.js",
+              "node_modules/@webcomponents/custom-elements/custom-elements.min.js"
             ]
           },
           "configurations": {
@@ -937,7 +943,8 @@
               "projects/product-cart/src/styles.css"
             ],
             "scripts": [
-              "node_modules/@webcomponents/custom-elements/src/native-shim.js"
+              "node_modules/@webcomponents/custom-elements/src/native-shim.js",
+              "node_modules/@webcomponents/custom-elements/custom-elements.min.js"
             ]
           },
           "configurations": {

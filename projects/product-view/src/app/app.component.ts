@@ -1,5 +1,5 @@
 
-import { Component, ViewEncapsulation, TemplateRef, ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, ViewEncapsulation, TemplateRef, ViewChild, ElementRef, Input , OnInit } from '@angular/core';
 // import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 
@@ -10,10 +10,15 @@ import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./app.component.css'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class ProductViewComponent {
+export class ProductViewComponent implements OnInit {
   constructor() {
   }
 
+  ngOnInit() {
+
+    console.log( '[ProductViewComponent] onInit()');
+
+  }
 
   @Input()
   set message(message: string) {

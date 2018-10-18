@@ -17,8 +17,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     ProductHeaderModule,
-    ProductViewModule,
-    ProductCartModule
+   ProductCartModule,
+   ProductViewModule
       ],
   providers: [],
   bootstrap: [AppComponent],

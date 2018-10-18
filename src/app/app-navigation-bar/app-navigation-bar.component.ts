@@ -11,14 +11,14 @@ import { StateService } from '../state.service';
 })
 export class AppNavigationBarComponent {
 
-  // isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-  //   .pipe(
-  //     map(result => result.matches)
-  //   );
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches)
+    );
 
   // constructor(private breakpointObserver: BreakpointObserver) {}
 
-  constructor(private stateService: StateService) {
+  constructor(private stateService: StateService, private breakpointObserver: BreakpointObserver) {
   }
 
   sendState() {
