@@ -3,6 +3,30 @@ import { Component, ViewEncapsulation, TemplateRef, ViewChild, ElementRef, Input
 // import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 
+
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
+}
+
+const ELEMENT_DATA: PeriodicElement[] = [
+  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
+  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
+  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
+  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
+  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+];
+
+
+
+
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'product-view',
@@ -50,6 +74,14 @@ export class ProductViewComponent implements OnInit {
       qty : 0
     }
   ];
+
+
+
+  displayedColumns: string[] = ['productname' , 'code' , 'price' , 'cartprice' , 'available' , 'qty' , 'actions'];
+  dataSource = this.productlist;
+
+
+
   _message: string;
 
   constructor() {
@@ -72,13 +104,11 @@ export class ProductViewComponent implements OnInit {
     }
 
   }
+
   get message(): string { return this._message; }
 
-
-
-
-
   public addToCart(product) {
+    console.log('product => ', product);
     if ( product.qty === product.available) {
       console.log('Product is out of Stock.');
     } else {
@@ -86,8 +116,18 @@ export class ProductViewComponent implements OnInit {
       const productcartele = document.querySelector('product-cart');
       if (productcartele != null) {
         productcartele['message'] = product;
+      } else {
+
+        console.log('product-cart not there');
       }
     }
    }
+
+public handleRowClick(row) {
+
+  console.log( 'row => ' , row);
+
+}
+
 
 }

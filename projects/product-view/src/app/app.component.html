@@ -1,36 +1,55 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-{{_message}}
-    <div class="col-sm-7" >
-      <div class="panel panel-primary">
-      <div class="panel-heading">Product List</div>
-      <div class="panel-body fixed-panel">
-        <div class='table-responsive'>
-            <table class='table'>
-                <thead>
-                  <tr>
-                    <th>Product</th>
-                    <th>Code</th>
-                    <th>Price</th>
-                    <th>Available</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let product of productlist">
-                    <td>{{product.productname}}</td>
-                    <td>{{product.code}}</td>
-                    <td>{{product.price | currency: 'USD' :'symbol-narrow': '1.2-2'}}</td>
-                     <td>{{product.available - product.qty}}</td>
-                    <td>
-                      <a class="btn btn-primary" (click)="addToCart(product)">Add</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-        </div>
-      </div>
-    </div>
-  </div>
-    <!--<iframe [src]="ordercartUrl" id="ordercard" class="fixed-iframe" frameBorder="0" ></iframe>-->
+    <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+
+    <!-- productname Column -->
+    <ng-container matColumnDef="productname">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.productname}} </td>
+    </ng-container>
+
+    <!-- code Column -->
+    <ng-container matColumnDef="code">
+        <th mat-header-cell *matHeaderCellDef> Code </th>
+        <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+    </ng-container>
+
+    <!-- price Column -->
+    <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+
+    <!-- cartprice Column -->
+    <ng-container matColumnDef="cartprice">
+        <th mat-header-cell *matHeaderCellDef> Cartprice </th>
+        <td mat-cell *matCellDef="let element"> {{element.cartprice}} </td>
+    </ng-container>
+
+    <!-- available Column -->
+    <ng-container matColumnDef="available">
+        <th mat-header-cell *matHeaderCellDef> available </th>
+        <td mat-cell *matCellDef="let element"> {{element.available}} </td>
+    </ng-container>
+
+    <!-- qty Column -->
+    <ng-container matColumnDef="qty">
+        <th mat-header-cell *matHeaderCellDef> qty </th>
+        <td mat-cell *matCellDef="let element"> {{element.qty}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+        <th *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-button (click)="addToCart(element)" color="primary" >ADD</button>
+            </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+    (click)="handleRowClick(row)"></tr>
+</table>
